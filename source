@@ -1,6 +1,3 @@
---[[
-TEDWARE X                                                                                                                                                                      
---]]
 
 
 local L_1_ = "t"
@@ -478,11 +475,14 @@ local ff = teleportsTab:Section("Bank Tree")
 ff:Button("Teleport", function()
 	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(170.510178, 59.6617432, -944.884216, 0.806685388, -8.34191383e-08, 0.590979934, 9.47717194e-09, 1, 1.28217792e-07, -0.590979934, -9.78305081e-08, 0.806685388)
 end) 
-local ff = teleportsTab:Section("Circus")
+local ff = teleportsTab:Section("Circus Mounatain")
 ff:Button("Teleport", function()
-	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(170.510178, 59.6617432, -944.884216, 0.806685388, -8.34191383e-08, 0.590979934, 9.47717194e-09, 1, 1.28217792e-07, -0.590979934, -9.78305081e-08, 0.806685388)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(292.643799, 122.749977, -860.128784, 0.986730993, 5.09704545e-09, 0.162363499, -9.24942123e-10, 1, -2.57716568e-08, -0.162363499, 2.52795154e-08, 0.986730993)
 end) 
-
+local ff = teleportsTab:Section("Gym Top")
+ff:Button("Teleport", function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-76.178093, 56.6998138, -629.940979, -0.9998914, -1.09370752e-07, 0.0147391548, -1.0945012e-07, 1, -4.57786342e-09, -0.0147391548, -6.1905685e-09, -0.9998914)
+end) 
 
 local webhookcheck =
    is_sirhurt_closure and "Sirhurt" or pebc_execute and "ProtoSmasher" or syn and "Synapse X" or
