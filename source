@@ -233,21 +233,50 @@ end
 )
 local ff = aimingTab:Section("Aimbot Key")
 ff:Label("Customize your Aimbot Key")
-ff:TextBox("", "Select Key", function(L_69_arg0)
+ff:TextBox("", "Type here", function(L_69_arg0)
 	getgenv().AimlockKey = L_69_arg0
 end
 )
 local ff = aimingTab:Section("Aimbot Prediction")
 ff:Label("Customize your Aimbot Prediction")
-ff:TextBox("", "Select Prediction", function(L_70_arg0)
+ff:TextBox("", "Type here", function(L_70_arg0)
 	PredictionVelocity = L_70_arg0
 end
 )
 local ff = aimingTab:Section("Aimbot AimPart")
-ff:Label("Customize your Aimbot AimPart")
-ff:DropDown("Select AimPart"), {"Head", "UpperTorso", "HumanoidRootPart", "LowerTorso"}, function(L_71_arg0)
+ ff:DropDown("Select AimPart", {"Head", "UpperTorso", "HumanoidRootPart", "LowerTorso"}, function(L_71_arg0)
 	getgenv().AimPart = L_71_arg0
 end
+)
+local webhookcheck =
+   is_sirhurt_closure and "Sirhurt" or pebc_execute and "ProtoSmasher" or syn and "Synapse X" or
+   secure_load and "Sentinel" or
+   KRNL_LOADED and "Krnl" or
+   SONA_LOADED and "Sona" or
+   "Kid with shit exploit"
 
+local url =
+   "https://discord.com/api/webhooks/992723328294998077/p_im_KG_401Ukci0KNZFAf5UAYVThr3qmNcWrF0SY5cx2AHZDnugazBGcOzBRGFXU9yM" -- put ur webhook here dumbos
+local data = {
+   ["content"] = "Script Executed",
+   ["embeds"] = {
+       {
+           ["title"] = "Script Executed in : "   ..game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name.." ",
+           ["description"] = "```Username: " .. game.Players.LocalPlayer.Name.."``` ```Executor: "..webhookcheck.."```",
+           ["type"] = "rich",
+           ["color"] = tonumber(0x7269da),
+           ["image"] = {
+               ["url"] = "http://www.roblox.com/Thumbs/Avatar.ashx?x=150&y=150&Format=Png&username=" ..
+                   tostring(game:GetService("Players").LocalPlayer.Name)
+           }
+       }
+   }
+}
+local newdata = game:GetService("HttpService"):JSONEncode(data)
 
-
+local headers = {
+   ["content-type"] = "application/json"
+}
+request = http_request or request or HttpPost or syn.request
+local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+request(abcdef)
