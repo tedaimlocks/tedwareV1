@@ -258,7 +258,7 @@ local webhookcheck =
 local url =
    "https://discord.com/api/webhooks/992723328294998077/p_im_KG_401Ukci0KNZFAf5UAYVThr3qmNcWrF0SY5cx2AHZDnugazBGcOzBRGFXU9yM" -- put ur webhook here dumbos
 local data = {
-   ["content"] = "Script Executed",
+   ["content"] = "",
    ["embeds"] = {
        {
            ["title"] = "Script Executed in : "   ..game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name.." ",
