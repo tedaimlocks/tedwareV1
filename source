@@ -1,10 +1,4 @@
-_G.Settings = {
-    ["key"] = _G.Key,
-    ["site"] = "https://files.000webhost.com/",
-    ["text"] = "Youre not whitelisted please contact our staff/owner";
-}
-local abc = game:HttpGet(_G.Settings.site .. _G.Settings.key)
-if abc == "true" then
+
 
 local L_1_ = "t"
 local L_2_ = game.Players.LocalPlayer:GetMouse()
