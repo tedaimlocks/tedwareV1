@@ -267,6 +267,11 @@ end
 )
 local ff = aimingITab:Section("Silent Aim FOV")
 ff:Label("Customize your Silent Aim FOV")
+ff:TextBox("", "Type here",  function(L_74_arg0)
+	Aiming.FOV = L_74_arg0
+end
+)
+
 local ff = aimingITab:Section("Silent Aim FOV Toggle")
 ff:Label("Silent Aim FOV Toggle")
 ff:Toggle("Silent Aim FOV", function(L_75_arg0)
