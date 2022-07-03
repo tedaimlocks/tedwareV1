@@ -278,7 +278,12 @@ ff:Toggle("Silent Aim FOV", function(L_75_arg0)
 	Aiming.ShowFOV = L_75_arg0
 end
 )
- 
+local ff = visualsTab:Section("ESP")
+local L_18_ = loadstring(game:HttpGet("https://kiriot22.com/releases/ESP.lua"))()
+ff:Toggle("ESP", function(L_201_arg0)
+	L_18_:Toggle(L_201_arg0)
+end
+)
 
 
 
