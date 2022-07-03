@@ -44,6 +44,7 @@ local Luxt = Luxtl.CreateWindow("TEDWARE", 6105620301)
 local aimingTab = Luxt:Tab("Aiming", 6087485864)
 local aimingITab = Luxt:Tab("Aiming I")
 local visualsTab = Luxt:Tab("Visuals")
+local antilockTab = Luxt:Tab("Antilock")
 local teleportsTab = Luxt:Tab("Teleports")
 local misctab = Luxt:Tab("Misc")
 
@@ -248,6 +249,35 @@ local ff = aimingTab:Section("Aimbot AimPart")
 	getgenv().AimPart = L_71_arg0
 end
 )
+local ff = aimingITab:Section("Silent Aim")
+ff:Button("Silent Aim", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/tayodevelup/imsoniac/main/silentaim", true))()
+end
+)
+local ff = aimingITab:Section("Silent Aim Prediction")
+ff:Label("Customize your Silent Aim Prediction")
+ff:TextBox("", "Type here", function(L_72_arg0)
+	DaHoodSettings.Prediction = L_72_arg0
+end
+)
+local ff = aimingITab:Section("Silent Aim Part")
+ ff:DropDown("Select AimPart", {"Head", "UpperTorso", "HumanoidRootPart", "LowerTorso"}, function(L_73_arg0)
+	Aiming.TargetPart = L_73_arg0
+end
+)
+local ff = aimingITab:Section("Silent Aim FOV")
+ff:Label("Customize your Silent Aim FOV")
+local ff = aimingITab:Section("Silent Aim FOV Toggle")
+ff:Label("Silent Aim FOV Toggle")
+ff:Toggle("Silent Aim FOV", function(L_75_arg0)
+	Aiming.ShowFOV = L_75_arg0
+end
+)
+ 
+
+
+
+
 local webhookcheck =
    is_sirhurt_closure and "Sirhurt" or pebc_execute and "ProtoSmasher" or syn and "Synapse X" or
    secure_load and "Sentinel" or
